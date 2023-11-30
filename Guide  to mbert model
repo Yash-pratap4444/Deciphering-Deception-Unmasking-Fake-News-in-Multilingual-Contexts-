@@ -1,0 +1,32 @@
+Approach:
+
+Step 1. Text extraction: As a new article arrives, the title and content are extracted from it.
+Step 2. Text translation: The title is translated into target languages and new search requests are generated.
+Step 3. Cross-lingual news retrieval: Based on generated cross-lingual request -- translated title -- the search with a Web search engine is executed.
+Step 4. Cross-lingual evidence impact computation: Top-N articles from search results are extracted to assess the authenticity of the initial news.
+The information described in the news is compared with the information in the articles from the search result. Also, the ranks of the source of the extracted articles are taken into account.
+The number of articles that confirms or disproves the original news from reliable sources is estimated.
+Step 5. News classification: Based on the information from the previous step, the decision is made about the authenticity of the news. 
+If the majority of results support the original news, then it is more likely to be true; if there are contradictions -- it is a signal to consider the news as a fake.
+
+Description:
+We trained the models you mentioned—  mBERTl—using the datasets gathered from many sources throughout the training process. To provide a fair comparison,
+the same dataset is used to train each model. A dataset of 2,348 articles, for example, may be divided into three categories: 70% (1,400 articles) for training, 
+15% (350 articles) for validation during training, and the remaining 15% (370 articles) for model performance testing. 
+Using the attributes that were taken from the data, each model will be trained to identify news items as "real" or "fake."
+In order to minimise the discrepancy between the models' predictions and the actual labels of the articles, the models will modify their internal parameters.
+For instance, the mBERT model will modify its parameters in later rounds to fix an error it made if it initially labels a legitimate news story as "fake."
+
+What is BERT?
+BERT is a method of pre-training language representations, meaning that we train a general-purpose "language understanding" model on a large text corpus (like Wikipedia),
+and then use that model for downstream NLP tasks that we care about (like question answering). BERT outperforms previous methods because it is the first unsupervised, 
+deeply bidirectional system for pre-training NLP.
+Unsupervised means that BERT was trained using only a plain text corpus, which is important because an enormous amount of plain text data is publicly available on the web in many languages.
+Pre-trained representations can also either be context-free or contextual, and contextual representations can further be unidirectional or bidirectional. Context-free models such as word2vec
+or GloVe generate a single "word embedding" representation for each word in the vocabulary, so bank would have the same representation in bank deposit and river bank. Contextual models instead 
+generate a representation of each word that is based on the other words in the sentence.
+
+BERT was built upon recent work in pre-training contextual representations — including Semi-supervised Sequence Learning, Generative Pre-Training, ELMo, and ULMFit — but crucially these models 
+are all unidirectional or shallowly bidirectional. This means that each word is only contextualized using the words to its left (or right). For example, in the sentence I made a bank deposit the
+unidirectional representation of bank is only based on I made a but not deposit. Some previous work does combine the representations from separate left-context and right-context models, but only in a "shallow" manner. 
+BERT represents "bank" using both its left and right context — I made a ... deposit — starting from the very bottom of a deep neural network, so it is deeply bidirectional.
