@@ -1,0 +1,15 @@
+Result:
+There are particular potential and problems associated with detecting false news in languages other than English. The lack of labelled datasets for languages
+other than English hinders the creation of reliable models and makes it challenging to efficiently train and evaluate algorithms. This discrepancy highlights 
+the requirement for more multilingual datasets in order to support the development of more accurate and inclusive fake news detection methods.
+Furthermore, a major challenge is adapting models to different language patterns and cultural situations. Different languages have distinct pragmatic,
+semantic, and syntactic characteristics that might affect how false news is perceived and disseminated. Thus, it is imperative to create models that take
+into consideration these language-specific features in order to increase the detection accuracy of fake news.
+
+Future Work:
+Subsequent research in this field may concentrate on enlarging the dataset by adding additional current multilingual datasets that are accessible for 
+identifying false information from a variety of sources, including news websites and social media platforms. Experimenting with other models on this 
+enlarged dataset—including more recent models or variants on the models that have previously been tested—may provide insightful results. Additional 
+research might be done on feature engineering by experimenting with various word embeddings, adding metadata-based features, or developing unique features. 
+The performance of the models might be improved via hyperparameter tweaking, which involves modifying the number of layers in the model, batch sizes, and learning rates.
+Finding patterns or trends in the data analysis might guide future research. Lastly, a clear and simple record of the techniques, findings, and insights would aid in comprehension and replication of the study.
