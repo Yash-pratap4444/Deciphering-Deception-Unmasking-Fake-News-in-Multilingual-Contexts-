@@ -1,0 +1,52 @@
+# Fake News Detection Dataset
+
+## Overview
+
+This repository includes the dataset used for training and evaluating the fake news detection model in our project.
+The dataset is designed for a multilingual context, allowing the model to be effective across various languages.
+
+## Dataset Details
+
+- **Name:** Multilingual Fake News Dataset
+- **Languages:** English, Spanish, French, German, Italian,Swedish,Japanese and Hindi.
+- **Columns:**
+  - `Article`: The text of the news article.
+  -'Language':language of the article.
+  -'Source':Source of the article.
+  -'Author':Author of the article.
+  -'Political Bias':Political Bias of the article.
+  -'Clickbait Score':Clickbait Score of the article.
+  - `label`: Binary label indicating whether the news is fake (1) or genuine (0).
+
+## Dataset Sources
+
+The dataset is a curated collection of news articles gathered from reputable sources and labeled by domain experts like kaggle. 
+The goal is to create a diverse and representative dataset for training and evaluating the fake news detection model.
+
+## Dataset Split
+
+The dataset is split into three sets for training, validation, and testing:
+
+- **Training Set:** 70%
+- **Validation Set:** 15%
+- **Test Set:** 15%
+
+## Data Preprocessing
+
+Before using the dataset, it's recommended to perform the following preprocessing steps:
+
+1. **Text Cleaning:** Remove any irrelevant characters, symbols, or formatting issues.
+2. **Language Identification:** Confirm the language of each article to ensure compatibility with the multilingual model.
+3. **Tokenization:** Tokenize the text into individual words or subwords for input to the model.
+
+## Usage Example
+
+```python
+import pandas as pd
+
+# Load the dataset
+dataset_path = 'path/to/dataset.csv'
+df = pd.read_csv(dataset_path)
+
+# Display the first few rows
+print(df.head())
